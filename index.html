@@ -3,108 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Especialista em HVAC-R e Refrigeração em Belém</title>
+    <title>Especialista HVAC - Split, VRF e Chillers</title>
     <style>
         :root {
-            --primary: #004a99; /* Azul Técnico */
-            --secondary: #111827;
-            --accent: #00e1ff;
-            --bg: #f9fafb;
+            --primary: #004a99;
+            --secondary: #0f172a;
+            --bg: #f8fafc;
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: #374151; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #334155; }
         
-        /* O SEGREDO ESTÁ AQUI: Esta linha busca a imagem que você vai gerar */
         header { 
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('capa-hvac.jpg');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('capa-hvac.jpg');
             background-size: cover;
             background-position: center;
             color: white; 
-            padding: 120px 5%; 
+            padding: 130px 5%; 
             text-align: center; 
         }
 
         .container { padding: 60px 10%; }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
-        
-        .card { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 12px; 
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            border-top: 6px solid var(--primary);
-            transition: transform 0.2s;
-        }
-        .card:hover { transform: translateY(-5px); }
+        h2 { text-align: center; color: var(--secondary); margin-bottom: 40px; font-size: 2.2rem; }
 
-        .form-group { margin-bottom: 18px; }
-        input, textarea, select { width: 100%; padding: 14px; border: 1px solid #e5e7eb; border-radius: 8px; box-sizing: border-box; font-size: 1rem; }
-        
-        button { 
-            background: var(--primary); 
-            color: white; 
-            padding: 16px 30px; 
-            border: none; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            font-weight: bold; 
+        .grid-duplo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .card-setor {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: 1px solid #e2e8f0;
+        }
+
+        .imagem-setor {
             width: 100%;
-            font-size: 1.1rem;
-            transition: background 0.2s;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            background-color: #cbd5e1; /* Cor cinza caso a foto falte */
         }
-        button:hover { background: #003d80; }
 
-        footer { background: var(--secondary); color: #d1d5db; text-align: center; padding: 40px; margin-top: 60px; }
-        footer p { margin: 5px 0; }
+        .info { padding: 30px; text-align: center; }
+        .info h3 { color: var(--primary); font-size: 1.8rem; margin-top: 0; }
+
+        .contato {
+            max-width: 650px;
+            margin: 80px auto;
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+        }
+
+        input, textarea, select { width: 100%; padding: 15px; border: 2px solid #f1f5f9; border-radius: 12px; margin-bottom: 15px; box-sizing: border-box; }
+        
+        button { background: var(--primary); color: white; padding: 20px; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; font-size: 1.2rem; }
+
+        footer { background: var(--secondary); color: white; text-align: center; padding: 50px; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Manutenção Técnica Especializada</h1>
-        <p style="font-size: 1.3rem; font-weight: 300;">Expertise em Sistemas HVAC-R, Chillers, Inversores e Controladores Danfoss.</p>
+        <h1>Climatização de Alta Performance</h1>
+        <p>Especialista em Sistemas Split, VRF e Chillers em Belém.</p>
     </header>
 
     <div class="container">
-        <h2 style="text-align: center; font-size: 2.2rem; color: var(--secondary);">Nossa Especialidade</h2>
-        <div class="grid">
-            <div class="card">
-                <h3 style="color: var(--primary);">Climatização Alta Tecnologia</h3>
-                <p>Diagnóstico e reparo em sistemas Inverter (VRF/VRV), Gree, LG e Carrier, focando em eficiência energética.</p>
+        <h2>Soluções Técnicas Especializadas</h2>
+        <div class="grid-duplo">
+            <div class="card-setor">
+                <div class="imagem-setor" style="background-image: url('split.jpg');"></div>
+                <div class="info">
+                    <h3>Linha Split Residencial</h3>
+                    <p>Instalação técnica e higienização profunda de aparelhos Split Inverter.</p>
+                </div>
             </div>
-            <div class="card">
-                <h3 style="color: var(--primary);">Refrigeração Comercial/Industrial</h3>
-                <p>Especialistas em racks de compressores, chillers e programação avançada de controladores Danfoss e Carel.</p>
-            </div>
-            <div class="card">
-                <h3 style="color: var(--primary);">Contratos PMOC e Preventiva</h3>
-                <p>Gestão completa de manutenção preventiva (PMOC) para garantir conformidade legal e performance.</p>
+
+            <div class="card-setor">
+                <div class="imagem-setor" style="background-image: url('industrial.jpg');"></div>
+                <div class="info">
+                    <h3>Sistemas Chiller e VRF</h3>
+                    <p>Manutenção pesada, diagnóstico Danfoss e eficiência energética.</p>
+                </div>
             </div>
         </div>
 
-        <div style="max-width: 650px; margin: 70px auto; background: white; padding: 40px; border-radius: 16px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);">
-            <h2 style="text-align: center; color: var(--secondary);">Solicite um Orçamento Técnico</h2>
+        <div class="contato">
+            <h2>Solicite um Orçamento</h2>
             <form>
-                <div class="form-group"><input type="text" placeholder="Nome Completo ou Razão Social" required></div>
-                <div class="form-group"><input type="email" placeholder="E-mail para contato" required></div>
-                <div class="form-group">
-                    <select>
-                        <option value="" disabled selected>Tipo de Serviço</option>
-                        <option value="preventiva">Manutenção Preventiva</option>
-                        <option value="corretiva">Manutenção Corretiva (Erro)</option>
-                        <option value="instalacao">Instalação/Projeto</option>
-                    </select>
-                </div>
-                <div class="form-group"><textarea rows="5" placeholder="Detalhes do equipamento e o problema (ex: Erro Danfoss, compressor não parte)"></textarea></div>
-                <button type="button" onclick="alert('Isso é uma simulação. Seu site profissional está pronto!')">Solicitar Cotação</button>
+                <input type="text" placeholder="Seu Nome">
+                <select>
+                    <option>Split Residencial</option>
+                    <option>Sistema VRF</option>
+                    <option>Chiller Industrial</option>
+                </select>
+                <textarea rows="4" placeholder="Como posso ajudar?"></textarea>
+                <button type="button">Falar com Especialista</button>
             </form>
         </div>
     </div>
 
     <footer>
-        <p><strong>Atendimento Técnico Especializado em Belém e Ananindeua</strong></p>
-        <p>&copy; 2026 - Especialista em Refrigeração Profissional. Todos os direitos reservados.</p>
+        <p><strong>Expertise em Climatização - Belém, PA</strong></p>
+        <p>&copy; 2026</p>
     </footer>
 
 </body>
