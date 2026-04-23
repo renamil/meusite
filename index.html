@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluções em Refrigeração e HVAC</title>
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #1e293b;
+            --accent: #00d4ff;
+            --bg: #f8fafc;
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #333; }
+        
+        header { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581092918056-0c4c3ccd37a5?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            color: white; 
+            padding: 100px 5%; 
+            text-align: center; 
+        }
+
+        .container { padding: 50px 10%; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        
+        .card { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary);
+        }
+
+        .form-group { margin-bottom: 15px; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        
+        button { 
+            background: var(--primary); 
+            color: white; 
+            padding: 15px 30px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            width: 100%;
+        }
+
+        footer { background: var(--secondary); color: white; text-align: center; padding: 30px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Manutenção Especializada HVAC-R</h1>
+        <p>Expertise técnica em sistemas inverter, chillers e refrigeração comercial.</p>
+    </header>
+
+    <div class="container">
+        <h2 style="text-align: center;">Nossos Serviços</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Climatização Inverter</h3>
+                <p>Diagnóstico preciso com ferramentas avançadas e correção de códigos de erro específicos.</p>
+            </div>
+            <div class="card">
+                <h3>Refrigeração Comercial</h3>
+                <p>Manutenção em controladores Danfoss, sistemas de expansão e carga de fluidos refrigerantes.</p>
+            </div>
+            <div class="card">
+                <h3>Manutenção Preventiva</h3>
+                <p>Planos de PMOC para garantir a eficiência energética e vida útil dos seus equipamentos.</p>
+            </div>
+        </div>
+
+        <div style="max-width: 600px; margin: 50px auto; background: white; padding: 30px; border-radius: 12px;">
+            <h2 style="text-align: center;">Solicite um Orçamento</h2>
+            <form>
+                <div class="form-group"><input type="text" placeholder="Seu Nome completo"></div>
+                <div class="form-group"><input type="text" placeholder="Tipo de Equipamento (Ex: Gree, LG, Danfoss)"></div>
+                <div class="form-group"><textarea rows="4" placeholder="Descreva o problema ou serviço necessário"></textarea></div>
+                <button type="button" onclick="alert('Simulação: Mensagem enviada!')">Enviar via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Localização:</strong> Atendimento em Belém e Região Metropolitana</p>
+        <p>&copy; 2026 - Especialista em Refrigeração</p>
+    </footer>
+
+</body>
+</html>
