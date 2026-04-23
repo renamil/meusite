@@ -8,6 +8,7 @@
         :root {
             --primary: #004a99;
             --secondary: #0f172a;
+            --accent: #00e1ff;
             --bg: #f8fafc;
         }
 
@@ -37,20 +38,23 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            transition: 0.3s;
+            transition: transform 0.3s ease;
             border: 1px solid #e2e8f0;
         }
+
+        .card-setor:hover { transform: translateY(-10px); }
 
         .imagem-setor {
             width: 100%;
             height: 250px;
             background-size: cover;
             background-position: center;
-            background-color: #cbd5e1; /* Cor cinza caso a foto falte */
+            background-color: #cbd5e1; /* Cor de fundo caso a foto falte */
         }
 
         .info { padding: 30px; text-align: center; }
         .info h3 { color: var(--primary); font-size: 1.8rem; margin-top: 0; }
+        .info p { font-size: 1.1rem; line-height: 1.6; color: #64748b; }
 
         .contato {
             max-width: 650px;
@@ -61,9 +65,23 @@
             box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
         }
 
-        input, textarea, select { width: 100%; padding: 15px; border: 2px solid #f1f5f9; border-radius: 12px; margin-bottom: 15px; box-sizing: border-box; }
+        .form-group { margin-bottom: 20px; }
+        input, textarea, select { width: 100%; padding: 15px; border: 2px solid #f1f5f9; border-radius: 12px; box-sizing: border-box; background: #f8fafc; font-size: 1rem; }
+        input:focus { border-color: var(--primary); outline: none; background: #fff; }
         
-        button { background: var(--primary); color: white; padding: 20px; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; width: 100%; font-size: 1.2rem; }
+        button { 
+            background: var(--primary); 
+            color: white; 
+            padding: 20px; 
+            border: none; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            width: 100%;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        button:hover { background: #003d80; }
 
         footer { background: var(--secondary); color: white; text-align: center; padding: 50px; }
     </style>
@@ -71,18 +89,19 @@
 <body>
 
     <header>
-        <h1>Climatização de Alta Performance</h1>
-        <p>Especialista em Sistemas Split, VRF e Chillers em Belém.</p>
+        <h1 style="font-size: 3.5rem; margin: 0;">Climatização de Alta Performance</h1>
+        <p style="font-size: 1.4rem; opacity: 0.9;">Especialista em Sistemas Split, VRF e Chillers em Belém.</p>
     </header>
 
     <div class="container">
         <h2>Soluções Técnicas Especializadas</h2>
+        
         <div class="grid-duplo">
             <div class="card-setor">
                 <div class="imagem-setor" style="background-image: url('split.jpg');"></div>
                 <div class="info">
                     <h3>Linha Split Residencial</h3>
-                    <p>Instalação técnica e higienização profunda de aparelhos Split Inverter.</p>
+                    <p>Instalação técnica e manutenção preventiva de aparelhos Split e Multi-Split Inverter. Foco em higienização profunda e performance térmica.</p>
                 </div>
             </div>
 
@@ -90,29 +109,32 @@
                 <div class="imagem-setor" style="background-image: url('industrial.jpg');"></div>
                 <div class="info">
                     <h3>Sistemas Chiller e VRF</h3>
-                    <p>Manutenção pesada, diagnóstico Danfoss e eficiência energética.</p>
+                    <p>Manutenção técnica em centrais VRF/VRV e Chillers. Diagnóstico com controladores Danfoss, foco em automação e alta eficiência energética.</p>
                 </div>
             </div>
         </div>
 
         <div class="contato">
-            <h2>Solicite um Orçamento</h2>
+            <h2 style="margin-top: 0; font-size: 1.8rem;">Solicite um Orçamento Técnico</h2>
             <form>
-                <input type="text" placeholder="Seu Nome">
-                <select>
-                    <option>Split Residencial</option>
-                    <option>Sistema VRF</option>
-                    <option>Chiller Industrial</option>
-                </select>
-                <textarea rows="4" placeholder="Como posso ajudar?"></textarea>
-                <button type="button">Falar com Especialista</button>
+                <div class="form-group"><input type="text" placeholder="Seu Nome ou Empresa" required></div>
+                <div class="form-group">
+                    <select required>
+                        <option value="" disabled selected>Selecione o Sistema</option>
+                        <option value="split">Split / Multi-Split (Residencial)</option>
+                        <option value="vrf">Sistema VRF / VRV (Corporativo)</option>
+                        <option value="chiller">Chiller / Centrais (Industrial)</option>
+                    </select>
+                </div>
+                <div class="form-group"><textarea rows="5" placeholder="Descreva a necessidade ou código de erro (Ex: Erro Danfoss, manutenção preventiva VRF)"></textarea></div>
+                <button type="button" onclick="alert('Seu formulário está pronto!')">Falar com Especialista</button>
             </form>
         </div>
     </div>
 
     <footer>
-        <p><strong>Expertise em Climatização - Belém, PA</strong></p>
-        <p>&copy; 2026</p>
+        <p style="font-size: 1.2rem; margin-bottom: 10px;"><strong>Expertise em Climatização - Belém, PA</strong></p>
+        <p>&copy; 2026 - HVAC-R Soluções Tecnológicas</p>
     </footer>
 
 </body>
