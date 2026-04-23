@@ -3,115 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Especialista HVAC - Split, VRF e Chillers</title>
+    <title>Especialista HVAC - Split, VRF e Chillers | Belém-PA</title>
     <style>
         :root {
-            --primary: #004a99;
-            --secondary: #0f172a;
-            --whatsapp: #25d366;
+            --primary: #004a99; /* Azul Técnico */
+            --secondary: #0f172a; /* Azul Escuro */
+            --whatsapp: #25d366; /* Verde WhatsApp */
             --bg: #f8fafc;
+            --text: #334155;
         }
 
-        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); color: #334155; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: var(--bg); color: var(--text); scroll-behavior: smooth; }
         
+        /* Banner Principal com a imagem capa-hvac.jpg */
         header { 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('capa-hvac.jpg');
-            background-size: cover; background-position: center; color: white; padding: 100px 5%; text-align: center; 
+            background-size: cover; background-position: center; color: white; padding: 120px 5%; text-align: center; 
         }
+        header h1 { font-size: 3.5rem; margin: 0 0 10px 0; }
+        header p { font-size: 1.4rem; opacity: 0.9; margin: 0; }
 
-        .container { padding: 40px 8%; }
-        h2 { text-align: center; color: var(--secondary); margin-bottom: 40px; font-size: 2.2rem; }
+        .container { padding: 60px 8%; }
+        h2 { text-align: center; color: var(--secondary); margin-bottom: 50px; font-size: 2.5rem; }
 
-        /* Grade de Serviços */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 60px; }
-        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-bottom: 4px solid var(--primary); }
-        .img-card { width: 100%; height: 200px; background-size: cover; background-position: center; }
-        .p-20 { padding: 20px; text-align: center; }
+        /* Grade de Especialidades */
+        .grid-servicos { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        .card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: transform 0.3s ease; border: 1px solid #e2e8f0; }
+        .card:hover { transform: translateY(-10px); }
+        .img-card { width: 100%; height: 240px; background-size: cover; background-position: center; }
+        .p-30 { padding: 30px; text-align: center; }
+        .p-30 h3 { color: var(--primary); font-size: 1.8rem; margin-top: 0; }
+        .p-30 p { font-size: 1.1rem; line-height: 1.6; }
 
-        /* Seção Galeria de Manutenções */
-        .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .foto-obra { width: 100%; height: 180px; border-radius: 10px; object-fit: cover; cursor: pointer; transition: 0.3s; }
-        .foto-obra:hover { transform: scale(1.05); }
+        /* Galeria de Fotos Campo */
+        .galeria-container { background: #fff; padding: 60px 8%; border-radius: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 80px; }
+        .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .foto-obra { width: 100%; height: 200px; border-radius: 12px; object-fit: cover; cursor: pointer; transition: 0.3s ease; border: 2px solid transparent; }
+        .foto-obra:hover { transform: scale(1.05); border-color: var(--primary); }
 
         /* Seção Depoimentos */
-        .depoimentos { background: #e2e8f0; padding: 60px 8%; border-radius: 30px; margin: 40px 0; }
-        .grid-depo { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .item-depo { background: white; padding: 25px; border-radius: 15px; font-style: italic; position: relative; }
-        .item-depo b { display: block; margin-top: 15px; font-style: normal; color: var(--primary); }
+        .depoimentos-container { background: var(--secondary); color: white; padding: 80px 8%; border-radius: 30px; margin-bottom: 80px; }
+        .depoimentos-container h2 { color: white; }
+        .grid-depo { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .item-depo { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 18px; font-style: italic; position: relative; border: 1px solid rgba(255,255,255,0.1); }
+        .item-depo b { display: block; margin-top: 20px; font-style: normal; color: var(--accent); font-size: 1.1rem; }
+
+        /* CTA WhatsApp Central */
+        .cta-whats { text-align: center; max-width: 700px; margin: 0 auto 80px auto; background: white; padding: 50px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .btn-whats { 
+            background: var(--whatsapp); color: white; padding: 20px 40px; border-radius: 14px; 
+            font-weight: bold; width: 100%; display: inline-block; text-decoration: none; text-align: center; 
+            font-size: 1.3rem; transition: background 0.3s; box-sizing: border-box;
+        }
+        .btn-whats:hover { background: #1eb956; }
 
         /* Botão WhatsApp Flutuante */
         .whatsapp-float {
-            position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: var(--whatsapp);
-            color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none;
+            position: fixed; width: 65px; height: 65px; bottom: 40px; right: 40px; background-color: var(--whatsapp);
+            color: #FFF; border-radius: 50px; text-align: center; font-size: 32px; box-shadow: 2px 2px 12px rgba(0,0,0,0.25);
+            z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        .btn-whats { 
-            background: var(--whatsapp); color: white; padding: 18px; border-radius: 12px; 
-            font-weight: bold; width: 100%; display: block; text-decoration: none; text-align: center; margin-top: 20px;
-        }
-
-        footer { background: var(--secondary); color: white; text-align: center; padding: 50px; margin-top: 60px; }
+        footer { background: #0b1120; color: white; text-align: center; padding: 60px 8%; margin-top: 0; border-top: 1px solid rgba(255,255,255,0.05); }
+        footer p { margin: 8px 0; opacity: 0.8; }
+        footer strong { font-size: 1.2rem; opacity: 1; color: white; }
     </style>
 </head>
 <body>
 
-    <a href="https://wa.me/5591985509286" class="whatsapp-float" target="_blank">WA</a>
+    <a href="https://wa.me/5591985509286?text=Olá! Vim pelo site e gostaria de um orçamento técnico." class="whatsapp-float" target="_blank">
+        <span style="font-family: Arial, sans-serif; font-weight: bold;">WA</span>
+    </a>
 
     <header>
-        <h1>Excelência Técnica HVAC-R</h1>
-        <p>Manutenção Profissional em Belém e Região Metropolitana.</p>
+        <h1>Excelência Técnica em HVAC-R</h1>
+        <p>Soluções Profissionais em Split, VRF e Chillers em Belém-PA.</p>
     </header>
 
     <div class="container">
-        <h2>Especialidades</h2>
-        <div class="grid">
+        <h2>Áreas de Especialidade</h2>
+        <div class="grid-servicos">
             <div class="card">
                 <div class="img-card" style="background-image: url('split.jpg');"></div>
-                <div class="p-20"><h3>Linha Split</h3><p>Instalação técnica e higienização.</p></div>
+                <div class="p-30">
+                    <h3>Linha Split Inverter</h3>
+                    <p>Instalação técnica padronizada e higienização profunda de sistemas Split e Multi-Split. Foco em performance e conforto.</p>
+                </div>
             </div>
             <div class="card">
                 <div class="img-card" style="background-image: url('industrial.jpg');"></div>
-                <div class="p-20"><h3>Chiller e VRF</h3><p>Diagnóstico avançado e automação.</p></div>
+                <div class="p-30">
+                    <h3>Sistemas VRF e Chiller</h3>
+                    <p>Manutenção especializada, diagnóstico avançado com controladores Danfoss e automação para eficiência industrial.</p>
+                </div>
             </div>
         </div>
 
-        <h2>Nosso Trabalho de Campo</h2>
-        <div class="galeria">
-            <img src="obra1.jpg" alt="Manutenção VRF" class="foto-obra">
-            <img src="obra2.jpg" alt="Limpeza de Split" class="foto-obra">
-            <img src="obra3.jpg" alt="Painel Danfoss" class="foto-obra">
-            <img src="obra4.jpg" alt="Instalação Chiller" class="foto-obra">
-        </div>
-    </div>
-
-    <div class="depoimentos">
-        <h2>O que dizem nossos clientes</h2>
-        <div class="grid-depo">
-            <div class="item-depo">
-                "Atendimento excepcional. O técnico resolveu o erro do nosso VRF que ninguém mais conseguia. Transparência total."
-                <b>— Carlos Eduardo, Gestor Industrial</b>
-            </div>
-            <div class="item-depo">
-                "Fiquei impressionada com a limpeza na manutenção dos splits da minha casa. Muito profissionais e educados."
-                <b>— Ana Paula, Residencial Parque Verde</b>
-            </div>
-            <div class="item-depo">
-                "Empresa de confiança. O sistema Chiller da nossa clínica está rodando perfeito após a última intervenção técnica."
-                <b>— Dr. Ricardo, Clínica Médica</b>
+        <div class="galeria-container">
+            <h2>Nosso Trabalho de Campo</h2>
+            <div class="galeria">
+                <img src="obra1.jpg" alt="Técnico trabalhando em placa VRF" class="foto-obra">
+                <img src="obra2.jpg" alt="Antes e depois de limpeza de Split" class="foto-obra">
+                <img src="obra3.jpg" alt="Painel de controle Danfoss industrial" class="foto-obra">
+                <img src="obra4.jpg" alt="Unidade Chiller em instalação" class="foto-obra">
             </div>
         </div>
     </div>
 
-    <div class="container" style="max-width: 600px;">
-        <h2>Pronto para agendar?</h2>
-        <a href="https://wa.me/5591985509286" class="btn-whats">FALAR COM ESPECIALISTA AGORA</a>
+    <div class="depoimentos-container">
+        <div class="container">
+            <h2>Confiança Relatada por Clientes</h2>
+            <div class="grid-depo">
+                <div class="item-depo">
+                    "Excelente atendimento técnico. Resolveram o erro complexo do nosso sistema VRF que outros não conseguiram. Transparência e competência."
+                    <b>— Carlos Eduardo, Gestor Industrial</b>
+                </div>
+                <div class="item-depo">
+                    "Muito profissionais. A higienização dos splits da minha residência foi impecável, ambiente limpo e técnico educado. Recomendo."
+                    <b>— Ana Paula, Residencial Parque Verde</b>
+                </div>
+                <div class="item-depo">
+                    "Empresa séria e de confiança. O Chiller da nossa clínica está operando perfeitamente após a última manutenção corretiva. Ótimo atendimento."
+                    <b>— Dr. Ricardo, Clínica Médica</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cta-whats">
+            <h2 style="margin-top: 0; color: var(--secondary);">Fale Direto com o Especialista</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Clique abaixo para iniciar seu atendimento via WhatsApp e solicitar uma visita técnica ou orçamento.</p>
+            <a href="https://wa.me/5591985509286?text=Olá! Gostaria de agendar uma manutenção." class="btn-whats">
+                SOLICITAR ORÇAMENTO AGORA
+            </a>
+        </div>
     </div>
 
     <footer>
         <p><strong>Expertise Técnica em Climatização - Belém, PA</strong></p>
+        <p>Atendimento Especializado Residencial e Industrial</p>
         <p>Telefone: (91) 98550-9286</p>
-        <p>&copy; 2026 - HVAC-R Soluções</p>
+        <p style="font-size: 0.8rem; margin-top: 25px;">&copy; 2026 - HVAC-R Soluções Tecnológicas. Todos os direitos reservados.</p>
     </footer>
 
 </body>
