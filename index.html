@@ -8,7 +8,7 @@
         :root {
             --primary: #004a99;
             --secondary: #0f172a;
-            --accent: #00e1ff;
+            --whatsapp: #25d366;
             --bg: #f8fafc;
         }
 
@@ -19,122 +19,135 @@
             background-size: cover;
             background-position: center;
             color: white; 
-            padding: 130px 5%; 
+            padding: 100px 5%; 
             text-align: center; 
         }
 
-        .container { padding: 60px 10%; }
+        .container { padding: 40px 10%; }
         
-        h2 { text-align: center; color: var(--secondary); margin-bottom: 40px; font-size: 2.2rem; }
+        h2 { text-align: center; color: var(--secondary); margin-bottom: 40px; font-size: 2rem; }
 
         .grid-duplo {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
 
         .card-setor {
             background: white;
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
         }
 
-        .card-setor:hover { transform: translateY(-10px); }
+        .imagem-setor { width: 100%; height: 220px; background-size: cover; background-position: center; background-color: #cbd5e1; }
 
-        .imagem-setor {
-            width: 100%;
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            background-color: #cbd5e1; /* Cor de fundo caso a foto falte */
+        .info { padding: 25px; text-align: center; }
+        .info h3 { color: var(--primary); margin-top: 0; }
+
+        /* Botão do WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
         }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        .info { padding: 30px; text-align: center; }
-        .info h3 { color: var(--primary); font-size: 1.8rem; margin-top: 0; }
-        .info p { font-size: 1.1rem; line-height: 1.6; color: #64748b; }
-
+        /* Formulário e Rodapé */
         .contato {
-            max-width: 650px;
-            margin: 80px auto;
+            max-width: 600px;
+            margin: 60px auto;
             background: #ffffff;
-            padding: 45px;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
-        .form-group { margin-bottom: 20px; }
-        input, textarea, select { width: 100%; padding: 15px; border: 2px solid #f1f5f9; border-radius: 12px; box-sizing: border-box; background: #f8fafc; font-size: 1rem; }
-        input:focus { border-color: var(--primary); outline: none; background: #fff; }
+        input, textarea, select { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 10px; margin-bottom: 15px; box-sizing: border-box; }
         
-        button { 
-            background: var(--primary); 
+        .btn-enviar { 
+            background: var(--whatsapp); 
             color: white; 
-            padding: 20px; 
+            padding: 18px; 
             border: none; 
-            border-radius: 12px; 
+            border-radius: 10px; 
             cursor: pointer; 
             font-weight: bold; 
             width: 100%;
-            font-size: 1.2rem;
-            transition: background 0.3s;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
         }
-        button:hover { background: #003d80; }
 
-        footer { background: var(--secondary); color: white; text-align: center; padding: 50px; }
+        footer { background: var(--secondary); color: white; text-align: center; padding: 40px; }
+        .contato-footer { margin-top: 15px; font-size: 1.1rem; }
+        .contato-footer a { color: var(--accent); text-decoration: none; display: block; margin: 10px 0; }
     </style>
 </head>
 <body>
 
+    <a href="https://wa.me/5591992523277?text=Olá! Gostaria de um orçamento técnico." class="whatsapp-float" target="_blank">
+        <span style="font-family: Arial; font-weight: bold;">WA</span>
+    </a>
+
     <header>
-        <h1 style="font-size: 3.5rem; margin: 0;">Climatização de Alta Performance</h1>
-        <p style="font-size: 1.4rem; opacity: 0.9;">Especialista em Sistemas Split, VRF e Chillers em Belém.</p>
+        <h1 style="font-size: 3rem;">Climatização Especializada</h1>
+        <p style="font-size: 1.3rem;">Soluções em Split, VRF e Chillers em Belém.</p>
     </header>
 
     <div class="container">
-        <h2>Soluções Técnicas Especializadas</h2>
+        <h2>Áreas de Atuação</h2>
         
         <div class="grid-duplo">
             <div class="card-setor">
                 <div class="imagem-setor" style="background-image: url('split.jpg');"></div>
                 <div class="info">
-                    <h3>Linha Split Residencial</h3>
-                    <p>Instalação técnica e manutenção preventiva de aparelhos Split e Multi-Split Inverter. Foco em higienização profunda e performance térmica.</p>
+                    <h3>Split Residencial</h3>
+                    <p>Instalação e manutenção técnica com foco em limpeza e performance.</p>
                 </div>
             </div>
 
             <div class="card-setor">
                 <div class="imagem-setor" style="background-image: url('industrial.jpg');"></div>
                 <div class="info">
-                    <h3>Sistemas Chiller e VRF</h3>
-                    <p>Manutenção técnica em centrais VRF/VRV e Chillers. Diagnóstico com controladores Danfoss, foco em automação e alta eficiência energética.</p>
+                    <h3>Chiller e VRF</h3>
+                    <p>Diagnóstico avançado, controladores Danfoss e eficiência industrial.</p>
                 </div>
             </div>
         </div>
 
         <div class="contato">
-            <h2 style="margin-top: 0; font-size: 1.8rem;">Solicite um Orçamento Técnico</h2>
-            <form>
-                <div class="form-group"><input type="text" placeholder="Seu Nome ou Empresa" required></div>
-                <div class="form-group">
-                    <select required>
-                        <option value="" disabled selected>Selecione o Sistema</option>
-                        <option value="split">Split / Multi-Split (Residencial)</option>
-                        <option value="vrf">Sistema VRF / VRV (Corporativo)</option>
-                        <option value="chiller">Chiller / Centrais (Industrial)</option>
-                    </select>
-                </div>
-                <div class="form-group"><textarea rows="5" placeholder="Descreva a necessidade ou código de erro (Ex: Erro Danfoss, manutenção preventiva VRF)"></textarea></div>
-                <button type="button" onclick="alert('Seu formulário está pronto!')">Falar com Especialista</button>
-            </form>
+            <h2 style="margin-top: 0;">Orçamento via WhatsApp</h2>
+            <p style="text-align: center;">Clique abaixo para falar direto com o especialista:</p>
+            <a href="https://wa.me/5591985509286?text=Olá! Gostaria de agendar uma visita técnica." class="btn-enviar">
+                INICIAR ATENDIMENTO AGORA
+            </a>
         </div>
     </div>
 
     <footer>
-        <p style="font-size: 1.2rem; margin-bottom: 10px;"><strong>Expertise em Climatização - Belém, PA</strong></p>
-        <p>&copy; 2026 - HVAC-R Soluções Tecnológicas</p>
+        <p><strong>Expertise em Climatização - Belém, PA</strong></p>
+        <div class="contato-footer">
+            <p>Telefone: (91) 98550-9286</p>
+            <p>E-mail: renatomiller96@outlook.com</p>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 20px;">&copy; 2026 - HVAC-R Soluções</p>
     </footer>
 
 </body>
